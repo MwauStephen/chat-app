@@ -261,7 +261,10 @@ body {
   max-height: 500px;
   overflow-y: auto;
   padding: 10px 30px 20px 30px;
-  background: #f7f7f7;
+  background-image: url("images/wp-2.jpg");
+  background-size: cover;
+  background-position: center;
+  /* background: #f7f7f7; */
   box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
     inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
 }
@@ -330,7 +333,7 @@ body {
   width: 55px;
   border: none;
   outline: none;
-  background: #333;
+  background: #0c53e8;
   font-size: 19px;
   cursor: pointer;
   opacity: 0.7;
