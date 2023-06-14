@@ -12,6 +12,6 @@ foreach($db as $key => $value){
     define(strtoupper($key), $value);
 }
 
-$connect=mysqli_connect(DB_USER,DB_USERNAME,DB_PASS,DB_NAME);
+$conn=mysqli_connect(DB_USER,DB_USERNAME,DB_PASS,DB_NAME);
 
 ?>
