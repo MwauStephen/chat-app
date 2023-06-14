@@ -197,7 +197,7 @@ body {
   transition: all 0.2s ease;
 }
 .users .search button.active {
-  background: #333;
+  background: #0c53e8;
   color: #fff;
 }
 .search button.active i::before {
