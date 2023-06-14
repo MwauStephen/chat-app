@@ -5,6 +5,18 @@
     $lname = mysqli_real_escape_string($conn, $_POST['lname']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+    // if($conn){
+    //     echo "database connection success";
+    // } else{
+    //     echo "database connection unsuccessful". mysqli_connect_error($conn);
+    // }
+
+    // echo  $fname .$lname.$email. $password;
+   
     if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password)){
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             $sql = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
@@ -16,6 +28,7 @@
                     $img_type = $_FILES['image']['type'];
                     $tmp_name = $_FILES['image']['tmp_name'];
                     
+                    // splits the image name
                     $img_explode = explode('.',$img_name);
                     $img_ext = end($img_explode);
     
@@ -25,7 +38,7 @@
                         if(in_array($img_type, $types) === true){
                             $time = time();
                             $new_img_name = $time.$img_name;
-                            if(move_uploaded_file($tmp_name,"images/".$new_img_name)){
+                            if(move_uploaded_file($tmp_name,"../images/".$new_img_name)){
                                 $ran_id = rand(time(), 100000000);
                                 $status = "Active now";
                                 $encrypt_pass = md5($password);
